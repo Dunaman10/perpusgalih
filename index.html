@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Buku</title>
+
+	<!-- Bootstrap v.4.0.0 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+	<!-- My CSS -->
+	<link rel="stylesheet" href="css/detail-buku.css">
+
+	<!-- My Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400&display=swap" rel="stylesheet">
+
+	<!-- Bootstrap Icon -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+	<!-- AOS -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+	<style>
+		@media (min-width: 576px) {
+			img {
+				width: 50%;
+			}
+
+		}
+
+		@media (min-width: 768px) {
+			img {
+				width: 50%;
+			}
+
+		}
+
+		@media (min-width: 992px) {
+			img {
+				width: 25%;
+			}
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<!-- navbar start -->
+	<nav class="navbar navbar-expand-lg bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index.php">Perpustakaan</a>
+
+			<div class="align-end">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Buku</button>
+
+				<!-- Modal Start -->
+				<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="loginModalLabel">Masuk</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form action="" method="post">
+									<div class="form-group">
+										<label for="username">Username:</label>
+										<input type="text" class="form-control" id="username" name="username" required>
+									</div>
+									<div class="form-group">
+										<label for="password">Password:</label>
+										<input type="password" class="form-control" id="password" name="password" required>
+									</div>
+									<button type="submit" class="btn btn-primary">Masuk</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Modal End -->
+
+				<button type="button" class="btn btn-primary text-end" data-toggle="modal"
+					data-target="#daftarModal">Daftar</button>
+
+				<!-- Modal Start -->
+				<div class="modal fade" id="daftarModal" tabindex="-1" role="dialog" aria-labelledby="daftarModalLabel"
+					aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="daftarModalLabel">Daftar</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<form action="" method="post">
+									<div class="form-group">
+										<label for="nama">Nama:</label>
+										<input type="text" class="form-control" id="nama" name="nama" required>
+									</div>
+									<div class="form-group">
+										<label for="username">Username:</label>
+										<input type="text" class="form-control" id="username" name="username" required>
+									</div>
+									<div class="form-group">
+										<label for="password">Password:</label>
+										<input type="password" class="form-control" id="password" name="password" required>
+									</div>
+									<div class="form-group">
+										<label for="password2">Konfirmasi Password:</label>
+										<input type="password" class="form-control" id="password2" name="password2" required>
+									</div>
+									<button type="submit" class="btn btn-primary">Daftar</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Modal End -->
+
+			</div>
+
+		</div>
+	</nav>
+	<!-- navbar end -->
+
+	<!-- Buku-buku start -->
+
+	<div class="container mt-4">
+		<h1 class="text-center mt-3 text-white">Baca Kuy!</h1>
+
+		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<div class="carousel-item active">
+					<img src="img/buku/perahu-kertas-dee-lestari.jpg" class="d-block mx-auto" alt="Buku 1" data-toggle="modal"
+						data-target=".bd-example-modal-lg1" style="cursor: pointer;">
+				</div>
+				<div class="carousel-item">
+					<img src="img/buku/tuhan-dihatimu.jpg" class="d-block mx-auto" alt="Buku 2" data-toggle="modal"
+						data-target=".bd-example-modal-lg2" style="cursor: pointer;">
+				</div>
+				<div class="carousel-item">
+					<img src="img/buku/seni-untuk-bersikap-bodo-amat.jpg" class="d-block mx-auto" alt="Buku 3" data-toggle="modal"
+						data-target=".bd-example-modal-lg3" style="cursor: pointer;">
+				</div>
+				<div class="carousel-item">
+					<img src="img/buku/pulang-tere-liye.jpg" class="d-block mx-auto" alt="Buku 4" data-toggle="modal"
+						data-target=".bd-example-modal-lg4" style="cursor: pointer;">
+				</div>
+				<div class="carousel-item">
+					<img src="img/buku/ayah-andrea-hirata.jpg" class="d-block mx-auto" alt="Buku 5" data-toggle="modal"
+						data-target=".bd-example-modal-lg5" style="cursor: pointer;">
+				</div>
+				<div class="carousel-item">
+					<img src="img/buku/Seni-Merayu-Tuhan.jpg" class="d-block mx-auto" alt="Buku 6" data-toggle="modal"
+						data-target=".bd-example-modal-lg6" style="cursor: pointer;">
+				</div>
+			</div>
+			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div>
+	</div>
+
+	<!-- Buku-buku end -->
+
+	<!-- Modal Start -->
+	<!-- Perahu Kertas -->
+	<div class="modal fade bd-example-modal-lg1" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<h1 class="text-center">Perahu Kertas</h1>
+				<table class="text-center" cellpadding="10">
+					<tr>
+						<td colspan="3">
+							<img src="img/buku/perahu-kertas-dee-lestari.jpg" alt="">
+						</td>
+					</tr>
+					<tr>
+						<th>Penerbit</th>
+						<th>Penulis</th>
+						<th>Tahun</th>
+					</tr>
+					<tr>
+						<td>Mizan</td>
+						<td>Dewi Dee Lestari</td>
+						<td>2016</td>
+					</tr>
+				</table>
+				<h2 class="pl-3">Deskripsi Buku</h2>
+				<p class="p-3">Namanya Kugy. Mungil, pengkhayal, dan berantakan. Dari benaknya, mengalir untaian dongeng indah.
+					Keenan belum pernah bertemu manusia seaneh itu ....
+					Namanya Keenan. Cerdas, artistik, dan penuh kejutan. Dari tangannya, mewujud lukisan-lukisan magis. Kugy belum
+					pernah bertemu manusia seajaib itu ....
+					Dan kini mereka berhadapan di antara hamparan misteri dan rintangan. Akankah dongeng dan lukisan itu bersatu?
+					Akankah hati dan impian mereka bertemu?</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Tuhan Ada di Hatimu -->
+	<div class="modal fade bd-example-modal-lg2" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<h1 class="text-center">Tuhan Ada di Hatimu</h1>
+				<table class="text-center" cellpadding="10">
+					<tr>
+						<td colspan="3">
+							<img src="img/buku/tuhan-dihatimu.jpg" alt="">
+						</td>
+					</tr>
+					<tr>
+						<th>Penerbit</th>
+						<th>Penulis</th>
+						<th>Tahun</th>
+					</tr>
+					<tr>
+						<td>Noura Books Publishing</td>
+						<td>Husein Ja'far Al-Hadar</td>
+						<td>2020</td>
+					</tr>
+				</table>
+				<h2 class="pl-3">Deskripsi Buku</h2>
+				<p class="p-3">Tuhan Ada di Hatimu karya Husein Ja’far Al-Hadar memberikan pandangan berbagai hal dari sudut
+					pandang Islam yang indah. Termasuk dengan kondisi kekinian, yang semuanya dapat dijawab dengan ajaran dalam
+					Islam sebagai agama yang tak pernah lekang oleh waktu.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Sebuah Seni Untuk Bersikap Bodo Amat -->
+	<div class="modal fade bd-example-modal-lg3" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<h1 class="text-center">Sebuah Seni Untuk Bersikap Bodo Amat</h1>
+				<table class="text-center" cellpadding="10">
+					<tr>
+						<td colspan="3">
+							<img src="img/buku/seni-untuk-bersikap-bodo-amat.jpg" alt="">
+						</td>
+					</tr>
+					<tr>
+						<th>Penerbit</th>
+						<th>Penulis</th>
+						<th>Tahun</th>
+					</tr>
+					<tr>
+						<td>Gramedia Widiasarana Indonesia</td>
+						<td>Mark Manson</td>
+						<td>2009</td>
+					</tr>
+				</table>
+				<h2 class="pl-3">Deskripsi Buku</h2>
+				<p class="p-3">Selama beberapa tahun belakangan, Mark Manson—melalui blognya yang sangat populer—telah membantu
+					mengoreksi harapan-harapan delusional kita, baik mengenai diri kita sendiri maupun dunia. Ia kini menuangkan
+					buah pikirnya yang keren itu di dalam buku hebat ini.
+					“Dalam hidup ini, kita hanya punya kepedulian dalam jumlah yang terbatas. Makanya, Anda harus bijaksana dalam
+					menentukan kepedulian Anda.” Manson menciptakan momen perbincangan yang serius dan mendalam, dibungkus dengan
+					cerita-cerita yang menghibur dan “kekinian”, serta humor yang cadas. Buku ini merupakan tamparan di wajah yang
+					menyegarkan untuk kita semua, supaya kita bisa mulai menjalani kehidupan yang lebih memuaskan, dan apa adanya.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Pulang -->
+	<div class="modal fade bd-example-modal-lg4" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<h1 class="text-center">Pulang</h1>
+				<table class="text-center" cellpadding="10">
+					<tr>
+						<td colspan="3">
+							<img src="img/buku/pulang-tere-liye.jpg" alt="">
+						</td>
+					</tr>
+					<tr>
+						<th>Penerbit</th>
+						<th>Penulis</th>
+						<th>Tahun</th>
+					</tr>
+					<tr>
+						<td>Sabak Grip Nusantara</td>
+						<td>Tere Liye</td>
+						<td>2020</td>
+					</tr>
+				</table>
+				<h2 class="pl-3">Deskripsi Buku</h2>
+				<p class="p-3">Buku novel yang berjudul Pulang ini merupakan karya dari penulis novel yang banyak digemari
+					karya-karyanya, yaitu Tere Liye. Novel ini dapat dinikmati oleh pembaca baik di kalangan remaja maupun orang
+					dewasa.
+
+					Kisah ini menceritkan perjalanan sosok pria bernama Bujang yang begitu suskses dalam bisnis shadow economy
+					yang ia geluti. Kepandaian dan keteguhan prinsipnya telah mengantarkannya ke puncak kesuksesan. Sebagai
+					seorang mafia, Bujang sangat disegani oleh pelaku bisnis shadow economy dari berbagai negara lain. Bahkan
+					seorang presiden dibuat tak berkutik di hadapanya.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Ayah -->
+	<div class="modal fade bd-example-modal-lg5" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<h1 class="text-center">Ayah</h1>
+				<table class="text-center" cellpadding="10">
+					<tr>
+						<td colspan="3">
+							<img src="img/buku/ayah-andrea-hirata.jpg" alt="">
+						</td>
+					</tr>
+					<tr>
+						<th>Penerbit</th>
+						<th>Penulis</th>
+						<th>Tahun</th>
+					</tr>
+					<tr>
+						<td>Mizan</td>
+						<td>Andrea Hirata</td>
+						<td>2016</td>
+					</tr>
+				</table>
+				<h2 class="pl-3">Deskripsi Buku</h2>
+				<p class="p-3">Betapa Sabari menyayangi Zorro. Ingin dia memeluknya sepanjang waktu. Dia terpesona melihat
+					makhluk kecil yang sangat indah dan seluruh kebaikan yang terpancar darinya. Diciuminya anak itu dari kepala
+					sampai ke jari-jemari kakinya yang mungil. Kalau malam Sabari susah susah tidur lantaran membayangkan bermacam
+					rencana yang akan dia lalui dengan anaknya jika besar nanti. Dia ingin mengajaknya melihat pawai 17 Agustus,
+					mengunjungi pasar malam, membelikannya mainan, menggandengnya ke masjid, mengajarinya berpuasa dan mengaji,
+					dan memboncengnya naik sepeda saban sore ke taman kota.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Seni Merayu Tuhan -->
+	<div class="modal fade bd-example-modal-lg6" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<h1 class="text-center">Seni Merayu Tuhan</h1>
+				<table class="text-center" cellpadding="10">
+					<tr>
+						<td colspan="3">
+							<img src="img/buku/Seni-Merayu-Tuhan.jpg" alt="">
+						</td>
+					</tr>
+					<tr>
+						<th>Penerbit</th>
+						<th>Penulis</th>
+						<th>Tahun</th>
+					</tr>
+					<tr>
+						<td>Mizan Pustaka</td>
+						<td>Husein Ja'far Al-Hadar</td>
+						<td>2022</td>
+					</tr>
+				</table>
+				<h2 class="pl-3">Deskripsi Buku</h2>
+				<p class="p-3">“Allah Maha Indah dan menyukai keindahan, maka dekati dia dengan rayuan yang begitu romantis.
+					Sebab amal kita bukanlah ‘alat tukar’ untuk surga, melainkan hanya Rahmat-Nya yang membawa kita ke surga.”
+					Mungkin pernah terlintas dalam benak Grameds – jika Tuhan Maha Pengasih, lantas masihkah kita perlu
+					merayu-Nya? Maka jawabannya tentu saja perlu, dan memang hanya itulah cara kita agar dapat menjemput
+					rahmat-Nya. Bahkan sebelum kita sempat merayu-Nya saja, Tuhan malah sudah memberi kita nikmat yang tak
+					terhingga alias unlimited. Jangankan untuk membalas nikmat-Nya, menghitungnya pun kita takkan mampu!
+					“Maka kita memerlukan seni merayu Tuhan, agar cinta dan rahmat-Nya senantiasa berdegup di hati kita.” Tulis
+					Husein Ja’far Al-Hadar.
+				</p>
+			</div>
+		</div>
+	</div>
+	<!-- Modal End -->
+
+	<!-- footer start -->
+	<footer class="fixed-bottom bg-light p-2 mt-5 text-center">
+		<p>&copy;Aji Muhammad Galih | 2023</p>
+	</footer>
+	<!-- footer end -->
+
+	<!-- AOS -->
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script>
+		AOS.init();
+	</script>
+
+	<!-- Bootstrap JS and jQuery -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+body {
+  background-image: url(../img/bg-index.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+/* detail-buku.php */
+.buku {
+  width: 15rem;
+}
+
+.buku img {
+  width: 15rem;
+}
+
+.card {
+  width: 15rem;
+  margin: auto;
+}
